@@ -4,7 +4,7 @@ The `add` method receives two numbers, `left` and `right`, both represented as a
 It theoretically adds these numbers and returns the result also as a list of digits. 
 For more information about the method, read its Javadoc.
 
-You have to use domain testing techniques to derive tests for this method.
+You have to use **specification based testing** techniques to derive tests for this method.
 
 The method under test receives arguments of type `List<Integer>`. To help you in creating lists of digits in your test code, we provide you with the `numbers()` method. We strongly suggest you to use it:
 
