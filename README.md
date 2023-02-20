@@ -1,4 +1,4 @@
-# INFOM124 - Software verification and validation
+# TEST INFOM124 - Software verification and validation
 ## Practical courses - 2022-2023
 
 This repository contains all the exercises of the "INFOM124 - Vérification et validation logicielle". To use this repository locally, you have to [clone it](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to your own machine.
