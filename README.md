@@ -9,7 +9,7 @@ All the requirements discussed in this section refer to Linux or macOS distribut
 
 ### Java
 
-JDK 17 (or openJDK 17) is required for all the exercises. Here are the steps of installation of openJDK 17.
+JDK 17 (or openJDK 17) is required for all the exercises. Here are the steps of installation of openJDK 17 on Linux and macOS distributions (for Windows, see [this tutorial](https://java.tutorials24x7.com/blog/how-to-install-openjdk-17-on-windows)).
 
 Installation:
 ```console
@@ -43,6 +43,18 @@ mvn -v
 The result should be similar to the image below. Make sure the Java version is 17!
 ![](images/maven-version.png)
 
+### Testing the installation
+
+After the installation is complete, open one of the exercise folder (`substringsBetween` for example). Let's run `andy` through the command line for this example. Once you are on the exercise folder, on the same directory the `pom.xml` file is in, run:
+```console
+mvn andy:run
+```
+
+After a few seconds, if everything goes well, the build is done and you can see something similar to the image below. If you have the same result, all your configuration is done for the course!
+> NB: The messages you are seeing in this example tell you that the project has not tests. This is normal as we haven't tested anything... yet!
+
+![](images/example-andy-execution.png)
+
 ## Structure of an exercise
 
 Each practical course has its folder containing each exercise made during the practical courses. These exercises follow the same basic structure. Every exercise contains two or three folders: `config`, `solution` and `src`. The `solution` folder will be pushed on the repository after the related course is finished. The folders have the following functionality:
@@ -70,15 +82,3 @@ This will output your errors, results and grades to the console. The first time 
 ### Maven Plugin
 
 If you have a Maven Plugin integration with your IDE, you would only have to look for the plugins under the category `andy` and run the `andy:run` plugin. This will run Andy in a new window and print the errors, results and grades here.
-
-## Working example
-
-After the installation is complete, open one of the exercise folder (`substringsBetween` for example). Let's run `andy` through the command line for this example. Once you are on the exercise folder, on the same directory the `pom.xml` file is in, run:
-```console
-mvn andy:run
-```
-
-After a few seconds, if everything goes well, the build is done and you can see something similar to the image below. If you have the same result, all your configuration is done for the course!
-> NB: The messages you are seeing in this example tell you that the project has not tests. This is normal as we haven't tested anything... yet!
-
-![](images/example-andy-execution.png)
