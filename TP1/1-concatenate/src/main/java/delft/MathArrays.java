@@ -20,6 +20,18 @@ class MathArrays {
 	 * @since 3.6
 	 */
 	public static double[] concatenate(double[]... x) {
-		return null;
+		int combinedLength = 0;
+		for (double[] a : x) {
+			combinedLength += a.length;
+		}
+		int offset = 0;
+		int curLength = 0;
+		final double[] combined = new double[combinedLength];
+		for (int i = 0; i < x.length; i++) {
+			curLength = x[i].length;
+			System.arraycopy(x[i], 0, combined, offset, curLength);
+			offset += curLength;
+		}
+		return combined;
 	}
 }
