@@ -10,12 +10,14 @@ class MathArrays {
 	}
 
 	/**
-	 * Returns an array consisting of the unique values in data. The return
-	 * array is sorted in descending order. Empty arrays are allowed, but null
-	 * arrays result in NullPointerException. Infinities are allowed. NaN values are
-	 * allowed with maximum sort order - i.e., if there are NaN values in
-	 * data, Double.NaN will be the first element of the output
-	 * array, even if the array also contains Double.POSITIVE_INFINITY.
+	 * Returns an array consisting of the unique values in data - i.e., if
+	 * data contains the same value multiple times, this value will be present only
+	 * once in the return array. The return array is sorted in descending order.
+	 * Empty arrays are allowed, but null arrays result in NullPointerException.
+	 * Infinities are allowed. NaN values are allowed with maximum sort order
+	 * - i.e., if there are NaN values in data, Double.NaN will be the first
+	 * element of the output array, even if the array also contains
+	 * Double.POSITIVE_INFINITY.
 	 *
 	 * @param data
 	 *            array to scan
