@@ -27,6 +27,17 @@ class MathArrays {
 	 * @since 3.6
 	 */
 	public static double[] unique(double[] data) {
-		return null;
+		TreeSet<Double> values = new TreeSet<Double>();
+		for (int i = 0; i < data.length; i++) {
+			values.add(data[i]);
+		}
+		final int count = values.size();
+		final double[] out = new double[count];
+		Iterator<Double> iterator = values.iterator();
+		int i = 0;
+		while (iterator.hasNext()) {
+			out[count - ++i] = iterator.next();
+		}
+		return out;
 	}
 }

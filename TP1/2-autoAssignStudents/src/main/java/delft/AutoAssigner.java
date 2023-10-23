@@ -94,7 +94,17 @@ class Workshop {
     // If there's an available date, it returns this date.
     // This method should not be called if there's no spot available.
     public ZonedDateTime getNextAvailableDate() {
-        return null;
+        // picks the first one that has available spots
+        ZonedDateTime firstAvailableDate = spotsPerDate
+                .entrySet()
+                .stream()
+                .filter(e -> e.getValue() > 0) // get all entries in the map that have a spot left
+                .map(Map.Entry::getKey) // get the dates (which are the keys in the map)
+                .sorted() // order the keys
+                .findFirst() // get the first one
+                .get();
+
+        return firstAvailableDate;
     }
 
     // This method takes up a spot on the given date.
@@ -167,7 +177,25 @@ class AssignmentsLogger {
 class AutoAssigner {
     public AssignmentsLogger assign(List<Student> students, 
       List<Workshop> workshops) {
-        return null;
+        AssignmentsLogger assignments = new AssignmentsLogger();
+
+        for(Workshop workshop : workshops) {
+            for(Student student : students) {
+                // Get the next available date for that workshop
+                // If there's no way, nothing we can do, just log it!
+                if(!workshop.hasAvailableDate()) {
+                    assignments.noAvailableSpots(workshop, student);
+                } else {
+                    // Great, that workshop has an available date!
+                    // Let's assign the student to that workshop on that specific date
+                    ZonedDateTime nextDate = workshop.getNextAvailableDate();
+                    assignments.assign(workshop, student, nextDate);
+                    workshop.takeASpot(nextDate);
+                }
+            }
+        }
+
+        return assignments;
     }
 
 }

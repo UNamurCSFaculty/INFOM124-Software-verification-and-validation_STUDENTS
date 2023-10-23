@@ -37,6 +37,28 @@ class SportsHallPlanner {
      * @throws IllegalArgumentException if there are duplicate halls in the list
      */
     public static Map<SportsHall, Request> planHalls(List<Request> requests, List<SportsHall> halls) {
+        if (new HashSet<>(halls).size() != halls.size()) {
+            throw new IllegalArgumentException("There should be no duplicate elements in the halls list.");
+        }
+        if (requests.isEmpty()) {
+            return new HashMap<>();
+        }
+        List<Request> nextRequests = new ArrayList<>(requests);
+        Request current = nextRequests.remove(0);
+        for (SportsHall hall : halls) {
+            // If hall is a suitable hall
+            if (hall.canFulfillRequest(current)) {
+                List<SportsHall> nextHalls = new ArrayList<>(halls);
+                nextHalls.remove(hall);
+                // Check if we can fulfill other requests
+                Map<SportsHall, Request> solution = planHalls(nextRequests, nextHalls);
+                if (solution != null) {
+                    solution.put(hall, current);
+                    return solution;
+                }
+            }
+        }
+
         return null;
     }
 }
