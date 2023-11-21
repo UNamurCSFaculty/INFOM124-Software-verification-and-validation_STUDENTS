@@ -66,7 +66,7 @@ mvn clean verify sonar:sonar \
   -Dsonar.login=sqp_6028bd54b089.....899d405de2159436feec
 ```
 
-10. This command will not be enough to run sonar on our project. We have to add this line at the end of the command: `-Pcoverage`. This gives us the entire command to keep:
+10. This command will not be enough to run sonar on our project. We have to add this line at the end of the command: `-Pcoverage` so that we can have the code coverage values in sonar. This gives us the entire command to keep:
 ```console
 mvn clean verify sonar:sonar \
   -Dsonar.projectKey=test-sonar \
