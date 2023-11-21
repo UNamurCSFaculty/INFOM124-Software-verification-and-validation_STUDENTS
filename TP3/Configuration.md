@@ -90,14 +90,25 @@ SonarLint can be installed on Intellij to see code smells, bugs and so on while 
 It also can be linked with SonarQube (it is mainly used in a CI/CD context). To get more informations about this, go to [https://docs.sonarqube.org/9.6/user-guide/sonarlint-connected-mode/](https://docs.sonarqube.org/9.6/user-guide/sonarlint-connected-mode/).
 
 
-## PMD Source Code Analyzer Project
+## PMD Source Code Analyzer Project and Spotbugs tools
+
+### Definition
 
 > PMD is a static source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth.
 > -- <cite>[PMD website](https://docs.pmd-code.org/latest/index.html)</cite>
 
+> SpotBugs is a program which uses static analysis to look for bugs in Java code.
+> -- <cite>[Spotbugs website](https://spotbugs.github.io/)</cite>
+
+### PMD rules
+
+Here is some information about the rules followed by PMD to find bugs: [https://docs.pmd-code.org/latest/pmd_rules_java.html](https://docs.pmd-code.org/latest/pmd_rules_java.html)
+
 ### Usage
 
-The plugin is already placed in the dependencies of the pom file of GildedRose-Refactoring-Kata. If you want to use it for another project, see [this link](https://docs.pmd-code.org/latest/pmd_userdocs_tools_maven.html).
-1. Run ```mvn pmd:pmd``` in the root of your project (aka inside *GildedRose-Refactoring-Kata* directory)
-2. Go to */target/site* and open *pmd.html* in IntelliJ as a local file URL with Firefox, Chrome or with IntelliJ built-in Preview (see screen below)
-![pmd-usage.png](../images/pmd-usage.png)
+The plugins are already placed in the dependencies of the pom file of GildedRose-Refactoring-Kata. If you want to use it for another project, see [this link for PMD](https://docs.pmd-code.org/latest/pmd_userdocs_tools_maven.html) and [this link for spotbugs](https://spotbugs.readthedocs.io/en/latest/maven.html).
+1. Run ```mvn compile site:site``` in the root of your project (aka inside *GildedRose-Refactoring-Kata* directory)
+2. Go to */target/site* and open *index.html* in IntelliJ as a local file URL with Firefox, Chrome or with IntelliJ built-in Preview (see screen below)
+![open-html.png](../images/open-html.png)
+3. Go to *Project Reports* and see the PMD and SpotBugs reports of your project (see below)
+![reports-html.png](../images/reports-html.png)
