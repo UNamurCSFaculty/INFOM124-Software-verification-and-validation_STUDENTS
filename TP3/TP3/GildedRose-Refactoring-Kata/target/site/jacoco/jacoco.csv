@@ -1,8 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-gilded-rose-kata,com.gildedrose,AgedBrie,1,24,1,1,0,7,1,3,0,3
-gilded-rose-kata,com.gildedrose,StdItem,11,27,3,3,1,8,2,4,0,3
-gilded-rose-kata,com.gildedrose,LegendaryItem,0,8,0,0,0,4,0,3,0,3
-gilded-rose-kata,com.gildedrose,BackstagePasses,2,34,3,3,2,11,3,3,0,3
-gilded-rose-kata,com.gildedrose,GildedRose,0,28,0,2,0,7,0,3,0,2
-gilded-rose-kata,com.gildedrose,Item,18,14,0,0,1,7,1,3,1,3
-gilded-rose-kata,com.gildedrose,ConjuredItem,8,26,2,2,1,8,2,3,0,3
