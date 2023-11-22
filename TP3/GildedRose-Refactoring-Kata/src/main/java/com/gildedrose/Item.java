@@ -2,6 +2,7 @@ package com.gildedrose;
 
 public class Item {
 
+    // Normalement on ne met pas ça en public, mais je ne pouvais pas modifier :(
     public String name;
 
     public int sellIn;
@@ -14,7 +15,19 @@ public class Item {
         this.quality = quality;
     }
 
-   @Override
+    public String getName() {
+        return name;
+    }
+
+    public int getSellIn() {
+        return sellIn;
+    }
+
+    public int getQuality() {
+        return quality;
+    }
+
+    @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
