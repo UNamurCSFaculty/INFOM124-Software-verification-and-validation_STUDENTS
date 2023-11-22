@@ -14,7 +14,7 @@ class GildedRoseTest {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("foo", app.items[0].getName());
+        assertEquals("foo", app.items[0].name);
     }
 
     @Test
@@ -24,7 +24,7 @@ class GildedRoseTest {
 
         app.updateQuality();
 
-        assertEquals(9, app.items[0].getSellIn());
+        assertEquals(9, app.items[0].quality);
     }
 
     @ParameterizedTest
@@ -45,7 +45,7 @@ class GildedRoseTest {
 
         app.updateQuality();
 
-        assertEquals(expected, app.items[0].getQuality());
+        assertEquals(expected, app.items[0].quality);
     }
 
     @Test
@@ -59,8 +59,8 @@ class GildedRoseTest {
 
         app.updateQuality();
 
-        assertEquals(10, app.items[0].getQuality());
-        assertEquals(13, app.items[1].getQuality());
-        assertEquals(9, app.items[2].getQuality());
+        assertEquals(10, app.items[0].quality);
+        assertEquals(13, app.items[1].quality);
+        assertEquals(9, app.items[2].quality);
     }
 }
