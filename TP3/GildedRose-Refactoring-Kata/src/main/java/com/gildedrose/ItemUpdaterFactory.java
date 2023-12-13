@@ -11,6 +11,14 @@ import com.gildedrose.updater.ConjuredItemUpdater;
 import com.gildedrose.updater.ItemUpdater;
 import com.gildedrose.updater.SulfurasItemUpdater;
 
+/**
+ * The ItemUpdaterFactory class is responsible for creating instances of
+ * ItemUpdater based on the item's name.
+ * It uses a map to associate each item name with its corresponding ItemUpdater
+ * class.
+ * To add a new item type, simply add a new entry to the map with the item's
+ * name as key and the corresponding ItemUpdater class as value.
+ */
 public class ItemUpdaterFactory {
 
     private static final Map<String, Class<? extends ItemUpdater>> ITEM_UPDATER_MAP = new HashMap<>();
@@ -22,6 +30,14 @@ public class ItemUpdaterFactory {
         ITEM_UPDATER_MAP.put(SulfurasItemUpdater.NAME, SulfurasItemUpdater.class);
     }
 
+    /**
+     * Creates an instance of ItemUpdater based on the given item.
+     *
+     * @param item the item for which to create the ItemUpdater
+     * @return the created ItemUpdater instance for the given item with the right
+     *         subclass
+     * @throws UnknownItemTypeExceptions if the item's name is not recognized
+     */
     public static ItemUpdater create(Item item) throws UnknownItemTypeExceptions {
         Class<? extends ItemUpdater> itemUpdaterClass = ITEM_UPDATER_MAP.get(item.name);
         if (itemUpdaterClass == null) {

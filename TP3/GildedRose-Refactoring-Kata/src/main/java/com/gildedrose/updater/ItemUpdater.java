@@ -2,6 +2,16 @@ package com.gildedrose.updater;
 
 import com.gildedrose.Item;
 
+/**
+ * The ItemUpdater class is responsible for updating the quality and sell-in
+ * value of an item.
+ * It provides methods to update the item's quality and sell-in value based on
+ * certain rules.
+ *
+ * This class should be subclassed for each item type with specific rules to
+ * update quality and sellIn. Subclasses only need to override methods that does
+ * not follow the default rules.
+ */
 public class ItemUpdater {
     public static final String NAME = "Default";
 
