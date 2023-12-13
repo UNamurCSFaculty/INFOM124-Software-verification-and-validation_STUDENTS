@@ -57,10 +57,8 @@ class GildedRose {
 
     private void LoseQuality(Item item,int nbrPointsToLose){
         for(int j = 0; j < nbrPointsToLose; j++){
-            if (item.quality > 0) {
-                if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                    item.quality -= 1;
-                }
+            if (item.quality > 0 && !item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                item.quality -= 1;
             }
         }
     }
